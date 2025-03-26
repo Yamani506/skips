@@ -8,9 +8,10 @@ import { Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 
+
+//change this to delete the React.div 
 const Command = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive>
+HTMLDivElement,React.ComponentPropsWithoutRef<typeof CommandPrimitive>
 >(({ className, ...props }, ref) => (
   <CommandPrimitive
     ref={ref}
@@ -37,6 +38,7 @@ const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
   );
 };
 
+// React.ElementRef<typeof CommandPrimitive.Input>
 const CommandInput = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Input>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>

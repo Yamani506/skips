@@ -11,7 +11,7 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
   id:any
 }
 
-const InputField = React.forwardRef<HTMLInputElement, InputProps>(({ className, type,register,error,name,id,label,...props},_ref) => {
+const InputField = React.forwardRef<HTMLInputElement, InputProps>(({ className, type,register,error,name,id,...props},) => {
   return (
 
     <div className="mb-2">

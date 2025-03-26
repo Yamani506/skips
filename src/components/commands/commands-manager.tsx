@@ -7,7 +7,7 @@ import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+// import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import {
   Table,
@@ -49,10 +49,11 @@ import {
   Edit2,
   Trash2,
   Mic,
-  Play,
+  // Play,
   Zap,
   Tag,
 } from "lucide-react";
+import { useForm } from "react-hook-form";
 
 interface VoiceCommand {
   id: string;
@@ -179,6 +180,7 @@ export function CommandsManager() {
       setSelectedCommand(null);
     }
   };
+  const {register}=useForm()
 
   return (
     <div className="space-y-6">
@@ -213,6 +215,7 @@ export function CommandsManager() {
                     setNewCommand({ ...newCommand, name: e.target.value })
                   }
                   placeholder="Enter command name"
+                  register={register}
                 />
               </div>
               <div className="grid gap-2">
@@ -224,6 +227,7 @@ export function CommandsManager() {
                     setNewCommand({ ...newCommand, trigger: e.target.value })
                   }
                   placeholder="Enter voice trigger phrase"
+                  register={register}
                 />
               </div>
               <div className="grid gap-2">
@@ -235,6 +239,7 @@ export function CommandsManager() {
                     setNewCommand({ ...newCommand, action: e.target.value })
                   }
                   placeholder="Enter action identifier"
+                  register={register}
                 />
               </div>
               <div className="grid gap-2">
@@ -260,14 +265,15 @@ export function CommandsManager() {
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="description">Description</Label>
-                <Textarea
+                {/* <Textarea
                   id="description"
                   value={newCommand.description || ""}
                   onChange={(e) =>
                     setNewCommand({ ...newCommand, description: e.target.value })
                   }
                   placeholder="Enter command description"
-                />
+                /> */}
+
               </div>
             </div>
             <DialogFooter>
@@ -414,6 +420,7 @@ export function CommandsManager() {
                       name: e.target.value,
                     })
                   }
+                  register={register}
                 />
               </div>
               <div className="grid gap-2">
@@ -427,6 +434,7 @@ export function CommandsManager() {
                       trigger: e.target.value,
                     })
                   }
+                  register={register}
                 />
               </div>
               <div className="grid gap-2">
@@ -439,7 +447,9 @@ export function CommandsManager() {
                       ...selectedCommand,
                       action: e.target.value,
                     })
+                    
                   }
+                  register={register}
                 />
               </div>
               <div className="grid gap-2">
@@ -465,7 +475,7 @@ export function CommandsManager() {
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="edit-description">Description</Label>
-                <Textarea
+                {/* <Textarea
                   id="edit-description"
                   value={selectedCommand.description}
                   onChange={(e) =>
@@ -474,7 +484,8 @@ export function CommandsManager() {
                       description: e.target.value,
                     })
                   }
-                />
+              
+                /> */}
               </div>
             </div>
           )}

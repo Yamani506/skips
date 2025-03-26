@@ -1,7 +1,6 @@
 "use client"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Phone, Building2 } from "lucide-react"
 import { useContactForm } from "@/core/queries/ContactForm"
@@ -9,7 +8,7 @@ import { InputField } from "@/components/ui/Input-Field"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import {contactValidation} from "@/core/validation/contact"
-import { createClient } from "@/app/utils/supabase/client"
+
 export default function ContactPage() {
 
 

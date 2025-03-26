@@ -7,11 +7,10 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
   error?:any,
   register:UseFormRegister<any>,
   name: string,
-  label?:string,
   id:any
 }
 
-const InputWithOutLabel = React.forwardRef<HTMLInputElement, InputProps>(({ className, type,register,error,name,id,label,...props},_ref) => {
+const InputWithOutLabel = React.forwardRef<HTMLInputElement, InputProps>(({ className, type,register,error,name,id,...props}) => {
   return (
 
     <div className="mb-2">

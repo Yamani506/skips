@@ -3,18 +3,10 @@ import type React from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { InputField } from "@/components/ui/Input-Field";
-import { Label } from "@/components/ui/label";
-import { FcGoogle } from "react-icons/fc";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { siginupValidation } from "@/core/validation/signupValidation";
-// import { NewRegistred } from "@/lib/supabaseAction";
-// import Link from "next/link";
+// import { zodResolver } from "@hookform/resolvers/zod";
 import { complateProfileAfterSignWithGoggle, useSignUp } from "@/core/queries/auth";
 import { useRouter } from "next/navigation";
-import { complateProfile } from "@/core/validation/complateProfile";
-import { supabase } from "@/lib/supabase";
-import { useEffect } from "react";
 // import GoogleBtn from '@/components/ui/googleBtn'
 
 export default function ComplateProfile() {

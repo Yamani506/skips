@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+// import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+// import { Textarea } from "@/components/ui/textarea";
 import { Slider } from "@/components/ui/slider";
 import { toast } from "sonner";
 import {
@@ -21,14 +21,14 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+// import {
+//   Dialog,
+//   DialogContent,
+//   DialogDescription,
+//   DialogHeader,
+//   DialogTitle,
+//   DialogTrigger,
+// } from "@/components/ui/dialog";
 import { Upload, FileText, Settings, Volume2, Brain } from "lucide-react";
 
 interface AgentConfig {
@@ -131,12 +131,13 @@ export function AgentManager() {
           <div className="space-y-4">
             <div className="grid gap-2">
               <Label>Direct Input</Label>
-              <Textarea
+              {/* <Textarea
                 placeholder="Enter knowledge base content..."
                 value={knowledgeBase}
                 onChange={(e) => setKnowledgeBase(e.target.value)}
                 className="min-h-[200px]"
-              />
+              /> */}
+              
             </div>
             <div className="grid gap-2">
               <Label>Upload Files</Label>
@@ -193,23 +194,23 @@ export function AgentManager() {
             </div>
             <div className="space-y-2">
               <Label>Max Tokens</Label>
-              <Input
+              {/* <Input
                 type="number"
                 value={config.maxTokens}
                 onChange={(e) =>
                   handleConfigChange("maxTokens", parseInt(e.target.value))
                 }
-              />
+              /> */}
             </div>
             <div className="space-y-2">
               <Label>Context Window</Label>
-              <Input
+              {/* <Input
                 type="number"
                 value={config.contextWindow}
                 onChange={(e) =>
                   handleConfigChange("contextWindow", parseInt(e.target.value))
                 }
-              />
+              /> */}
             </div>
           </div>
         </Card>
@@ -281,12 +282,12 @@ export function AgentManager() {
           <div className="space-y-4">
             <div className="grid gap-2">
               <Label>Custom Prompt Template</Label>
-              <Textarea
+              {/* <Textarea
                 placeholder="Enter custom prompt template..."
                 value={promptTemplate}
                 onChange={(e) => setPromptTemplate(e.target.value)}
                 className="min-h-[200px]"
-              />
+              /> */}
               <p className="text-sm text-muted-foreground">
                 Use {"{input}"} as placeholder for user input
               </p>

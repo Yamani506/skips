@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Slider } from "@/components/ui/slider";
+// import { Slider } from "@/components/ui/slider";
 import { toast } from "sonner";
 import {
   Select,
@@ -25,12 +25,13 @@ import {
   Bell,
   Globe,
   Shield,
-  Database,
-  Mail,
-  Keyboard,
+  // Database,
+  // Mail,
+  // Keyboard,
   Headphones,
   Save,
 } from "lucide-react";
+import { useForm } from "react-hook-form";
 
 interface SystemSettings {
   notifications: {
@@ -100,7 +101,7 @@ const languages = [
   { value: "es", label: "Spanish" },
   { value: "fr", label: "French" },
 ];
-
+const {register}=useForm();
 export function SettingsManager() {
   const [settings, setSettings] = useState<SystemSettings>(initialSettings);
   const [ipInput, setIpInput] = useState("");
@@ -270,6 +271,8 @@ export function SettingsManager() {
                   onChange={(e) =>
                     handleRecordingChange("retention", parseInt(e.target.value))
                   }
+                  register={register}
+
                 />
               </div>
               <div className="flex items-center justify-between">
@@ -316,6 +319,7 @@ export function SettingsManager() {
                   onChange={(e) =>
                     handleSecurityChange("sessionTimeout", parseInt(e.target.value))
                   }
+                  register={register}
                 />
               </div>
               <div className="space-y-2">
@@ -325,6 +329,7 @@ export function SettingsManager() {
                     placeholder="Enter IP address"
                     value={ipInput}
                     onChange={(e) => setIpInput(e.target.value)}
+                    register={register}
                   />
                   <Button onClick={handleAddIp}>Add</Button>
                 </div>

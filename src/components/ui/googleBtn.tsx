@@ -3,17 +3,17 @@ import React from 'react'
 import { Button } from './button'
 import { FcGoogle } from "react-icons/fc";
 import { createClient } from "@/app/utils/supabase/client";
-import { redirect, useSearchParams } from "next/navigation";
+import {useSearchParams } from "next/navigation";
 import { useState } from'react';
 export default function GoogleBtn() {
 
-const [isGoogleLoading, setIsGoogleLoading] = useState<boolean>(false);
+// const [isGoogleLoading, setIsGoogleLoading] = useState<boolean>(false);
   const searchParams = useSearchParams();
   const next = searchParams.get("next");
   const supabase=createClient();
 
   const handleGoogleLogin=async() => {
-    setIsGoogleLoading(true);
+    // setIsGoogleLoading(true);
     try {
       const { data,error } = await supabase.auth.signInWithOAuth({
         provider: "google",
@@ -37,9 +37,9 @@ const [isGoogleLoading, setIsGoogleLoading] = useState<boolean>(false);
       }
 
       console.log('the data in googlebtn ',data);
-    } catch (error) {
+    } catch  {
      
-      setIsGoogleLoading(false);
+      // setIsGoogleLoading(false);
     }
   }
   return (

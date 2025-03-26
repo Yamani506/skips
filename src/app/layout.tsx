@@ -6,7 +6,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 import {QueryClientProvider,QueryClient } from '@tanstack/react-query';
 import { useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
 
 const inter = Inter({ subsets: ['latin'] });
 

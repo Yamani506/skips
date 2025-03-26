@@ -3,8 +3,8 @@ import type React from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { InputField } from "@/components/ui/Input-Field";
-import { Label } from "@/components/ui/label";
-import { FcGoogle } from "react-icons/fc";
+// import { Label } from "@/components/ui/label";
+// import { FcGoogle } from "react-icons/fc";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { siginupValidation } from "@/core/validation/signupValidation";
@@ -12,13 +12,13 @@ import { siginupValidation } from "@/core/validation/signupValidation";
 import Link from "next/link";
 import { useSignUp } from "@/core/queries/auth";
 import { useRouter } from "next/navigation";
-import GoogleBtn from '@/components/ui/googleBtn'
+// import GoogleBtn from '@/components/ui/googleBtn'
 import ContinueWith from "./forms/continueWith";
 import PhoneInput from "./forms/phone-input";
 
 export function RegisterForm({
   className,
-  ...props
+  // ...props
 }: React.ComponentPropsWithoutRef<"form">) {
   const {
     register,
