@@ -1,0 +1,16 @@
+{
+  "node": {
+    "7f6a51b2810f912bd0a153a46481a106f14e0d2ec6": {
+      "workers": {
+        "app/signin/page": {
+          "moduleId": "[project]/.next-internal/server/app/signin/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/supabaseWithSignInGoogle.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/signin/page": "action-browser"
+      }
+    }
+  },
+  "edge": {}
+}
