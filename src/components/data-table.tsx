@@ -22,6 +22,7 @@ import {
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { DataTablePagination } from "@/components/data-table-pagination";
+import { useForm } from "react-hook-form";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -49,7 +50,7 @@ export function DataTable<TData, TValue>({
       columnFilters,
     },
   });
-
+const {register}=useForm()
   return (
     <div className="space-y-4">
       <Input
@@ -59,6 +60,7 @@ export function DataTable<TData, TValue>({
           table.getColumn("agent")?.setFilterValue(event.target.value)
         }
         className="max-w-sm"
+        register={register}
       />
       <div className="rounded-md border">
         <Table>

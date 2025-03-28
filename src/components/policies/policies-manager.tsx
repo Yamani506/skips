@@ -51,6 +51,7 @@ import {
   Clock,
   AlertTriangle,
 } from "lucide-react";
+import { useForm } from "react-hook-form";
 
 interface Policy {
   id: string;
@@ -99,6 +100,7 @@ export function PoliciesManager() {
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
   const [selectedPolicy, setSelectedPolicy] = useState<Policy | null>(null);
 
+  const {register}=useForm()
   const handleStatusChange = (policyId: string, newStatus: boolean) => {
     setPolicies((currentPolicies) =>
       currentPolicies.map((policy) =>
@@ -211,13 +213,13 @@ export function PoliciesManager() {
                   </TableCell>
                   <TableCell>
                     <Badge
-                      variant={
-                        policy.priority === 1
-                          ? "destructive"
-                          : policy.priority === 2
-                          ? "warning"
-                          : "secondary"
-                      }
+                      // variant={
+                      //   policy.priority === 1
+                      //     ? "destructive"
+                      //     : policy.priority === 2
+                      //     ? "warning"
+                      //     : "secondary"
+                      // }
                     >
                       {policy.priority === 1
                         ? "High"
@@ -280,7 +282,9 @@ export function PoliciesManager() {
                         ...selectedPolicy,
                         name: e.target.value,
                       })
+
                     }
+                    register={register}
                   />
                 </div>
                 <div className="grid gap-2">

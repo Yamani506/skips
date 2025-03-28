@@ -80,15 +80,15 @@ export function UserTable() {
               <TableCell>{user.role}</TableCell>
               <TableCell>
                 <Badge
-                  variant={
-                    user.status === "Active"
-                      ? "success"
-                      : user.status === "In Call"
-                      ? "default"
-                      : user.status === "Break"
-                      ? "warning"
-                      : "secondary"
-                  }
+                  // variant={
+                  //   user.status === "Active"
+                  //     ? "success"
+                  //     : user.status === "In Call"
+                  //     ? "default"
+                  //     : user.status === "Break"
+                  //     ? "warning"
+                  //     : "secondary"
+                  // }
                 >
                   {user.status}
                 </Badge>

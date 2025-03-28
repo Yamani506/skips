@@ -38,6 +38,7 @@ import {
   PenSquare,
   Trash2,
 } from "lucide-react";
+import { useForm } from "react-hook-form";
 
 interface Profile {
   id: string;
@@ -87,6 +88,7 @@ const profiles: Profile[] = [
     avatar: "https://ui-avatars.com/api/?name=James+Miller",
   },
 ];
+const {register}=useForm()
 
 export function ProfilesGrid() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -119,11 +121,11 @@ export function ProfilesGrid() {
             <div className="grid gap-4 py-4">
               <div className="grid gap-2">
                 <Label htmlFor="name">Full Name</Label>
-                <Input id="name" placeholder="Enter agent's full name" />
+                <Input id="name" placeholder="Enter agent's full name" register={register} />
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="Enter work email" />
+                <Input id="email" type="email" placeholder="Enter work email" register={register}/>
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="role">Role</Label>
@@ -217,13 +219,13 @@ export function ProfilesGrid() {
             </div>
             <div className="mt-4">
               <Badge
-                variant={
-                  profile.status === "active"
-                    ? "success"
-                    : profile.status === "training"
-                    ? "warning"
-                    : "secondary"
-                }
+                // variant={
+                //   profile.status === "active"
+                //     ? "success"
+                //     : profile.status === "training"
+                //     ? "warning"
+                //     : "secondary"
+                // }
               >
                 {profile.status.charAt(0).toUpperCase() + profile.status.slice(1)}
               </Badge>

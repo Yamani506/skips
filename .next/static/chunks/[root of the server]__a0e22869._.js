@@ -49,7 +49,7 @@ function ThemeProvider({ children, ...props }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/src/components/theme-provider.tsx",
-        lineNumber: 8,
+        lineNumber: 12,
         columnNumber: 10
     }, this);
 }

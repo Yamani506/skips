@@ -64,13 +64,13 @@ export function AgentStats() {
               <TableCell className="text-right">{agent.satisfaction}%</TableCell>
               <TableCell>
                 <Badge
-                  variant={
-                    agent.status === "Exceeding"
-                      ? "success"
-                      : agent.status === "Meeting"
-                      ? "secondary"
-                      : "destructive"
-                  }
+                  // variant={
+                  //   agent.status === "Exceeding"
+                  //     ? "success"
+                  //     : agent.status === "Meeting"
+                  //     ? "secondary"
+                  //     : "destructive"
+                  // }
                 >
                   {agent.status}
                 </Badge>

@@ -32,7 +32,7 @@ const InputWithOutLabel = React.forwardRef<HTMLInputElement, InputProps>(({ clas
     </div>
   )
 })
-InputWithOutLabel.displayName = "Input"
+InputWithOutLabel.displayName = "InputWithOutLabel"
 
 export { InputWithOutLabel }
 

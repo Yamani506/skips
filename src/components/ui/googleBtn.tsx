@@ -4,7 +4,7 @@ import { Button } from './button'
 import { FcGoogle } from "react-icons/fc";
 import { createClient } from "@/app/utils/supabase/client";
 import {useSearchParams } from "next/navigation";
-import { useState } from'react';
+// import { useState } from'react';
 export default function GoogleBtn() {
 
 // const [isGoogleLoading, setIsGoogleLoading] = useState<boolean>(false);

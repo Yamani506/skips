@@ -30,6 +30,7 @@ import {
 //   DialogTrigger,
 // } from "@/components/ui/dialog";
 import { Upload, FileText, Settings, Volume2, Brain } from "lucide-react";
+import { useForm } from "react-hook-form";
 
 interface AgentConfig {
   temperature: number;
@@ -80,7 +81,7 @@ export function AgentManager() {
   const [knowledgeBase, setKnowledgeBase] = useState("");
   const [promptTemplate, setPromptTemplate] = useState("");
   const [isHistoryOpen, setIsHistoryOpen] = useState(false);
-
+const {register} = useForm();
   const handleConfigChange = (key: keyof AgentConfig, value: any) => {
     setConfig((prev) => ({ ...prev, [key]: value }));
     toast.success(`${key} updated successfully`);
@@ -197,9 +198,10 @@ export function AgentManager() {
               {/* <Input
                 type="number"
                 value={config.maxTokens}
-                onChange={(e) =>
-                  handleConfigChange("maxTokens", parseInt(e.target.value))
-                }
+                // onChange={(e) =>
+                //   handleConfigChange("maxTokens", parseInt(e.target.value))
+                // }
+                
               /> */}
             </div>
             <div className="space-y-2">
