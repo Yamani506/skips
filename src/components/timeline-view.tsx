@@ -71,6 +71,17 @@ const timelineData: TimelineItem[] = [
   },
 ];
 
+const getVoiceLogs=()=>{
+  const respone=fetch('https://api.vapi.ai/call',{
+    headers:{
+      'Authorization': 'Bearer 25838acc-1005-4b22-80fb-f7916e61ef7f',
+    }
+  }).then(res=>res.json()).then(data=>console.log(data));
+  return respone;
+}
+
+getVoiceLogs();
+
 export function TimelineView() {
   const [selectedItem, setSelectedItem] = useState<string | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
